@@ -1,129 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A beautiful HTML5 boilerplate">
-    <title>Beautiful Page Title</title>
-    
-    <style>
-        /* 1. Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f7f6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* 2. Layout Containers */
-        header {
-            background: #ffffff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c3e50;
-            text-decoration: none;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            flex: 1; /* Pushes footer down */
-        }
-
-        /* 3. Typography & Elements */
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            color: #555;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #2980b9;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #2c3e50;
-            color: #bdc3c7;
-            margin-top: auto;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <nav>
-            <a href="#" class="logo">MyBrand</a>
-            <div>
-                </div>
-        </nav>
-    </header>
-
-    <main class="container">
-        <h1>Welcome to Your Page</h1>
-        <p>
-            This is a clean, centered, and responsive HTML template. 
-            The CSS is included in the head section, so you don't need a separate file to get started.
-        </p>
-        <p>
-            You can simply paste your content here. The layout automatically handles spacing, 
-            typography, and mobile responsiveness.
-        </p>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Project: Event invite</title>
+        <link rel="stylesheet" href="styles.css">
+		<script src="p5.min.js"></script>
+		
+    </head>
+    <body>
+	
+		
+		
         
-        <button onclick="alert('Hello!')">Click Me</button>
-    </main>
+		<button id="open-btn" onclick="openSideBar()">☰ Open Sidebar</button>
+			
+		<h1 class="page head">Hello World!</h1>
+		
+				 <!-- Poster -->
+		
+		<h2 class="poster head">Hello World!</h2>
+				 <!-- Poster1 -->
+		
+		
+		<img class="poster" id="poster1" alt="welcome" src="https://github.com/Dhrubajyoti930/dhrubatweb/blob/main/welcome-poster.png?raw=true">
+		<div class="poster body">
+			<h3>Welcome</h3>
+		</div>       
+		
+				<!-- Poster2 -->
+		<img class="poster" id="poster1" alt="welcome" src="https://raw.githubusercontent.com/Dhrubajyoti930/dhrubatweb/refs/heads/main/IMG_20251107_075520843.jpg">
+		<div class="poster body">
+			<h3>My friend Allian had gifted it to me on my 16th Birthday 🎂</h3>
+		</div> 
+		
+				<!-- Talk -->
+				
+		<h2 class="talk head">Hello Visitor!</h2>
+				<!-- Talk1 -->
+		<div class="talk body">
+			<p>Hi, welcome to my webpage. It is a great honor to have you here and see my creations and thus be a part of my learning process. It motivates me to keep going.</p>
+		</div>
+				<!-- Talk2 -->
+		<div class="talk body">
+			<p>I make theories.</p>
+		</div>
+				<!-- Talk3 -->
+		<div class="talk body">
+			<p>Join me on my theories.</p>
+		</div>
+		<!-- Talk4 -->
+		<div class="talk body">
+<a href="https://github.com/Dhrubajyoti930/dhrubatweb/blob/main/Merge_g6p.pdf" download>
+    Click here to download
+</a>
+                        <p>BY ME AND GROUP6MEMBERS: 
+🖥️C O M P U T E R  S C I E N C E🖥️
+ PROJECT TATA LITE !!!.</p>
+                </div>
+		
+		
+		<canvas id="side-bar" ></canvas>
+		
+		
+		
+		
+		
+		
+		<script>
+			var c =-200;
+			function setup(){
+				createCanvas(windowWidth-15, 10, 4, 0);
+				background(255,255,255);
+			}
+			function draw(){
+				background(255,255,255);
+				fill(0, 100, 220);
+				rect(c,0, 10, 10);
+				text("      SAY HI TO HIMRAJ :)", c, 10);
+				c += 2;
+				if(c >= windowWidth){
+					c = -200;
+				}
+			}
+			
+		</script>
+		
+		  <script>
+	const button = document.getElementById('open-btn');
+    const canvas = document.getElementById("side-bar");
+    const ctx = canvas.getContext("2d");
+	var open = 0;
+    
+    ctx.fillStyle = "rgb(30, 30, 30)";
+	
+	function openSideBar(){
+	
+		if (!open){
+			ctx.fillRect(0, 0, windowWidth, windowHeight);
+			canvas.style.height = "70%";
+			canvas.style.width = "30%";
+			button.innerText = "☰ Close Sidebar";
+			open = 1;
+		}else{
+			canvas.style.height = "0%";
+			canvas.style.width = "0%";
+			button.innerText = "☰ Open Sidebar";
+			
+			open = 0;
+		}
+	}
+	
+		  </script>
 
-    <footer>
-        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
-    </footer>
-
-</body>
+    </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
