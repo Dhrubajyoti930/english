@@ -1,146 +1,66 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Project: Event invite</title>
-        <link rel="stylesheet" href="styles.css">
-		<script src="p5.min.js"></script>
-		
-    </head>
-    <body>
-	
-		
-		
-        
-		<button id="open-btn" onclick="openSideBar()">☰ Open Sidebar</button>
-			
-		<h1 class="page head">ENGLISH PROJECT 2026</h1>
-		
-				 <!-- Poster -->
-		
-		<h2 class="poster head">STORY</h2>
-				 <!-- Poster1 -->
-		
-		
-		<img class="poster" id="poster1" alt="welcome" src="https://g.co/gemini/share/635b94a4a485">
-		<div class="poster body">
-			<h3>Welcome</h3>
-		</div>       
-		
-				<!-- Poster2 -->
-		<img class="poster" id="poster1" alt="welcome" src="https://raw.githubusercontent.com/Dhrubajyoti930/dhrubatweb/refs/heads/main/IMG_20251107_075520843.jpg">
-		<div class="poster body">
-			<h3>My friend Allian had gifted it to me on my 16th Birthday 🎂</h3>
-		</div> 
-		
-				<!-- Talk -->
-				
-		<h2 class="talk head">Hello Visitor!</h2>
-				<!-- Talk1 -->
-		<div class="talk body">
-			<p>Adrienne Rich at the English Party
-It was early January at Barton Cottage, England. Sir John Middleton had planned a party for some renowned writers, including Adrienne Rich, Pablo Neruda, Robert Frost, William Douglas, and Jane Austen. The party was held at Barton Cottage and was attended by Mrs. Dashwood and her three daughters, along with guests such as Willoughby, Mrs. John Middleton, Mrs. Middleton, and Colonel Brandon.</p>
-		</div>
-				<!-- Talk2 -->
-		<div class="talk body">
-			<p>I make theories.</p>
-		</div>
-				<!-- Talk3 -->
-		<div class="talk body">
-			<p>Join me on my theories.</p>
-		</div>
-		<!-- Talk4 -->
-		<div class="talk body">
-<a href="https://github.com/Dhrubajyoti930/dhrubatweb/blob/main/Merge_g6p.pdf" download>
-    Click here to download
-</a>
-                        <p>BY ME AND GROUP6MEMBERS: 
-🖥️C O M P U T E R  S C I E N C E🖥️
- PROJECT TATA LITE !!!.</p>
-                </div>
-		
-		
-		<canvas id="side-bar" ></canvas>
-		
-		
-		
-		
-		
-		
-		<script>
-			var c =-200;
-			function setup(){
-				createCanvas(windowWidth-15, 10, 4, 0);
-				background(255,255,255);
-			}
-			function draw(){
-				background(255,255,255);
-				fill(0, 100, 220);
-				rect(c,0, 10, 10);
-				text("      SAY HI TO HIMRAJ :)", c, 10);
-				c += 2;
-				if(c >= windowWidth){
-					c = -200;
-				}
-			}
-			
-		</script>
-		
-		  <script>
-	const button = document.getElementById('open-btn');
-    const canvas = document.getElementById("side-bar");
-    const ctx = canvas.getContext("2d");
-	var open = 0;
-    
-    ctx.fillStyle = "rgb(30, 30, 30)";
-	
-	function openSideBar(){
-	
-		if (!open){
-			ctx.fillRect(0, 0, windowWidth, windowHeight);
-			canvas.style.height = "70%";
-			canvas.style.width = "30%";
-			button.innerText = "☰ Close Sidebar";
-			open = 1;
-		}else{
-			canvas.style.height = "0%";
-			canvas.style.width = "0%";
-			button.innerText = "☰ Open Sidebar";
-			
-			open = 0;
-		}
-	}
-	
-		  </script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
 
-    </body>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow: hidden;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        #birthday {
+            font-weight: bold;
+            color: white;
+            text-align: center;
+
+            /* responsive font */
+            font-size: clamp(2rem, 8vw, 5rem);
+
+            text-shadow:
+                0 0 10px rgba(255,255,255,0.8),
+                0 0 25px rgba(255,182,193,0.9);
+
+            transition: transform 0.2s;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="birthday">🎉 HAPPY BIRTHDAY 🎉</div>
+
+    <script>
+        const text = document.getElementById("birthday");
+
+        let scale = 1;
+        let grow = true;
+        let y = 0;
+        let dir = 1;
+
+        setInterval(() => {
+
+            // pulse
+            scale += grow ? 0.008 : -0.008;
+            if (scale > 1.15 || scale < 1) grow = !grow;
+
+            // float
+            y += dir * 0.4;
+            if (y > 12 || y < -12) dir *= -1;
+
+            text.style.transform = `scale(${scale}) translateY(${y}px)`;
+
+        }, 16);
+    </script>
+
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
